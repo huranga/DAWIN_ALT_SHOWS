@@ -1,0 +1,21 @@
+fos_elastica:
+    clients:
+        default: { host: localhost , port: 9200 }
+    indexes :
+        app:
+            index_name: app_%kernel.environment%
+        types:
+            articles:
+                mappings:
+                    name:
+                        type: varchar
+                    synopsis:
+                        type: longtext
+                    title: ~
+                    content: ~
+                persistence:
+                    driver: orm
+                    model: src\AppBundle\Entity\TVShow
+                    finder: ~
+                    provider: ~
+                    listener: ~

@@ -1,0 +1,16 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block menu_calendar %}active{% endblock %}
+
+{% block contents %}
+    <section>
+    	<div class="container">
+    		<h3 style="margin-top: 50px;">Liste des épisodes à venir</h3>
+            <div class="row">
+    		{% for episode in episodes %}
+            	<p>{{ episode.number }} - {{ episode }} - {{ episode.date|date('d-m-Y') }}</p>
+    		{% endfor %}
+            </div>
+    	</div>
+    </section>
+{% endblock %}
